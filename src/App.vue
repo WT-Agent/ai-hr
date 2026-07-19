@@ -345,7 +345,7 @@ const metricsList = [
   { key: 'stability', label: '稳定性与忠诚度 (Stability)' }
 ];
 
-const aiScores = ref<{ skills: number; logic: number; team: number; potential: number; stability: number; } | null>(null);
+const aiScores = ref<Record<string, number> | null>(null);
 
 const styleOptions = [
   { label: '大厂冰山胜任力模型 (过往案例深度考察与防套话追问)', value: '大厂冰山胜任力模型' },
@@ -363,7 +363,7 @@ interface HistoryItem {
   job: string;
   input: string;
   styleLabel: string;
-  aiScores: { skills: number; logic: number; team: number; potential: number; stability: number; } | null;
+  aiScores: Record<string, number> | null;
   output: string;
 }
 
